@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-primary: #1668FF;
+  --color-primary-light: #3B8AFF;
+  --color-primary-lighter: #5BA0FF;
+  --color-bg: #0D1117;
+  --color-bg-card: #161B22;
+  --color-bg-hover: #1C2333;
+  --color-border: #30363D;
+  --color-text: #E6EDF3;
+  --color-text-muted: #8B949E;
+  --color-success: #2EA043;
+  --color-danger: #F85149;
+  --color-warning: #D29922;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Inter', 'DIN Next', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #30363D;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #484F58;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(22, 27, 34, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(48, 54, 61, 0.6);
+}
+
+.glass-light {
+  background: rgba(22, 27, 34, 0.5);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(48, 54, 61, 0.4);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #1668FF, #5BA0FF, #3B8AFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effect */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(22, 104, 255, 0.15), 0 0 40px rgba(22, 104, 255, 0.05);
+}
+
+.glow-success {
+  box-shadow: 0 0 20px rgba(46, 160, 67, 0.15), 0 0 40px rgba(46, 160, 67, 0.05);
+}
+
+/* Ant Design dark theme overrides */
+.ant-steps-item-process .ant-steps-item-icon {
+  background: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon {
+  background: transparent !important;
+  border-color: var(--color-primary) !important;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon .ant-steps-icon {
+  color: var(--color-primary) !important;
+}
+
+/* Number animation */
+.number-animate {
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Pulse animation for active step */
+.step-active-pulse {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
